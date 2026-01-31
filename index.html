@@ -10,12 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Dark Mode Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="theme-icon">🌙</span>
+  </button>
+
+  <!-- Floating Particles Background -->
+  <div class="particles-container" id="particles"></div>
 
   <!-- Header -->
   <header class="header">
     <div class="header-content">
       <div class="profile-badge">
-        <div class="avatar">HR</div>
+        <div class="avatar" id="avatar">HR</div>
+        <div class="avatar-ripple"></div>
       </div>
       <h1>Hasnat Rasool</h1>
       <p class="subtitle">Full-Stack Software Developer</p>
@@ -44,20 +52,20 @@
       Technical Skills
     </h2>
     <div class="skills-grid">
-      <div class="skill-category">
+      <div class="skill-category" data-category="languages">
         <div class="skill-icon">🔤</div>
         <h3>Languages</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">C/C++</span>
-          <span class="skill-tag">C#</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">HTML</span>
-          <span class="skill-tag">CSS</span>
-          <span class="skill-tag">Solidity</span>
+          <span class="skill-tag" data-skill="Python">Python</span>
+          <span class="skill-tag" data-skill="JavaScript">JavaScript</span>
+          <span class="skill-tag" data-skill="TypeScript">TypeScript</span>
+          <span class="skill-tag" data-skill="C/C++">C/C++</span>
+          <span class="skill-tag" data-skill="C#">C#</span>
+          <span class="skill-tag" data-skill="Java">Java</span>
+          <span class="skill-tag" data-skill="SQL">SQL</span>
+          <span class="skill-tag" data-skill="HTML">HTML</span>
+          <span class="skill-tag" data-skill="CSS">CSS</span>
+          <span class="skill-tag" data-skill="Solidity">Solidity</span>
         </div>
       </div>
       <div class="skill-category">
@@ -109,7 +117,7 @@
     </h2>
 
     <div class="timeline">
-      <div class="card experience-card">
+      <div class="card experience-card" data-card="expandable">
         <div class="card-header">
           <div class="card-title-group">
             <h3>Full-Stack Software Developer</h3>
@@ -119,11 +127,12 @@
         </div>
         <span class="location">📍 Lahore, Pakistan</span>
         <ul class="achievements">
-          <li><span class="bullet">▸</span> Built Flask REST APIs handling 4M+ products using MongoDB with optimized connection pooling.</li>
-          <li><span class="bullet">▸</span> Implemented NLP-based ingredient parsing with 90% accuracy and fuzzy matching across SQL datasets.</li>
-          <li><span class="bullet">▸</span> Developed ETL pipelines reducing API response time from 2s to 200ms.</li>
+          <li><span class="bullet">▸</span> Built Flask REST APIs handling <span class="highlight-number">4M+</span> products using MongoDB with optimized connection pooling.</li>
+          <li><span class="bullet">▸</span> Implemented NLP-based ingredient parsing with <span class="highlight-number">90%</span> accuracy and fuzzy matching across SQL datasets.</li>
+          <li><span class="bullet">▸</span> Developed ETL pipelines reducing API response time from <span class="highlight-number">2s</span> to <span class="highlight-number">200ms</span>.</li>
           <li><span class="bullet">▸</span> Engineered RAG-based chatbots using LangChain, Ollama, and ChromaDB.</li>
         </ul>
+        <button class="expand-btn">View Details <span class="expand-icon">▼</span></button>
       </div>
 
       <div class="card experience-card">
@@ -165,7 +174,7 @@
     </h2>
 
     <div class="projects-grid">
-      <div class="card project-card">
+      <div class="card project-card" data-card="clickable">
         <div class="project-header">
           <h3>TrustIsMust (FYP)</h3>
           <span class="project-badge">Featured</span>
@@ -180,6 +189,7 @@
           <li><span class="bullet">▸</span> Built fake review detection using Naive Bayes and PyABSA.</li>
           <li><span class="bullet">▸</span> Deployed scalable review processing pipeline on AWS (EC2, S3, RDS).</li>
         </ul>
+        <div class="card-ripple"></div>
       </div>
 
       <div class="card project-card">
@@ -274,8 +284,23 @@
   <footer class="footer">
     <div class="footer-content">
       <p>© 2026 Hasnat Rasool. Built with passion and modern web technologies.</p>
+      <div class="footer-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="4">0</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="20">0</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="10">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
