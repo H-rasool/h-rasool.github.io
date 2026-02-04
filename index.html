@@ -2,304 +2,605 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hasnat Rasool | Full-Stack Software Developer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfolio of Hasnat Rasool — Full-Stack Software Developer (Python, React, Angular, FastAPI, Docker, RAG systems)." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- Dark Mode Toggle -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-    <span class="theme-icon">🌙</span>
-  </button>
 
-  <!-- Floating Particles Background -->
-  <div class="particles-container" id="particles"></div>
+<body>
+  <!-- Background accents -->
+  <div class="bg-accent bg-accent-1"></div>
+  <div class="bg-accent bg-accent-2"></div>
 
   <!-- Header -->
-  <header class="header">
-    <div class="header-content">
-      <div class="profile-badge">
-        <div class="avatar" id="avatar">HR</div>
-        <div class="avatar-ripple"></div>
-      </div>
-      <h1>Hasnat Rasool</h1>
-      <p class="subtitle">Full-Stack Software Developer</p>
-      <p class="description">Building scalable applications with modern technologies</p>
-      <div class="contact">
-        <span class="contact-item">📍 Lahore, Pakistan</span>
-        <span class="contact-item">📞 +92 303 7364710</span>
-        <span class="contact-item">✉️ hasnatrasool620@gmail.com</span>
-      </div>
-      <div class="links">
-        <a href="https://linkedin.com/in/hasnatrasool" target="_blank" class="social-link linkedin">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-          LinkedIn
-        </a>
+  <header id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark">HR</span>
+        <span class="brand-text">Hasnat Rasool</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="toggle-track">
+            <span class="toggle-thumb" id="toggle-thumb"></span>
+          </span>
+        </button>
       </div>
     </div>
-    <div class="header-decoration"></div>
   </header>
 
-  <!-- Skills -->
-  <section class="skills-section">
-    <h2 class="section-title">
-      <span class="title-icon">💻</span>
-      Technical Skills
-    </h2>
-    <div class="skills-grid">
-      <div class="skill-category" data-category="languages">
-        <div class="skill-icon">🔤</div>
-        <h3>Languages</h3>
-        <div class="skill-tags">
-          <span class="skill-tag" data-skill="Python">Python</span>
-          <span class="skill-tag" data-skill="JavaScript">JavaScript</span>
-          <span class="skill-tag" data-skill="TypeScript">TypeScript</span>
-          <span class="skill-tag" data-skill="C/C++">C/C++</span>
-          <span class="skill-tag" data-skill="C#">C#</span>
-          <span class="skill-tag" data-skill="Java">Java</span>
-          <span class="skill-tag" data-skill="SQL">SQL</span>
-          <span class="skill-tag" data-skill="HTML">HTML</span>
-          <span class="skill-tag" data-skill="CSS">CSS</span>
-          <span class="skill-tag" data-skill="Solidity">Solidity</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-icon">⚡</div>
-        <h3>Frameworks</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Flask</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Angular</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">.NET</span>
-          <span class="skill-tag">Streamlit</span>
-          <span class="skill-tag">Electron.js</span>
-          <span class="skill-tag">LangChain</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-icon">🗄️</div>
-        <h3>Databases</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">MS SQL Server</span>
-          <span class="skill-tag">ChromaDB</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-icon">🛠️</div>
-        <h3>Tools & AI</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Git/GitHub</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">Selenium</span>
-          <span class="skill-tag">BeautifulSoup</span>
-          <span class="skill-tag">RAG</span>
-          <span class="skill-tag">Ollama</span>
-          <span class="skill-tag">n8n</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Hero -->
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="pill">Full-Stack Software Developer • AI / RAG • Automation</p>
+          <h1 class="hero-title">
+            Building reliable products with
+            <span class="gradient-text">Python</span>,
+            <span class="gradient-text">modern web</span>, and
+            <span class="gradient-text">AI systems</span>.
+          </h1>
 
-  <!-- Experience -->
-  <section class="experience-section">
-    <h2 class="section-title">
-      <span class="title-icon">💼</span>
-      Experience
-    </h2>
+          <p class="hero-subtitle">
+            I build end-to-end applications (Flask/FastAPI + React/Angular), data pipelines,
+            and local AI assistants using RAG, vector databases, and workflow automation.
+          </p>
 
-    <div class="timeline">
-      <div class="card experience-card" data-card="expandable">
-        <div class="card-header">
-          <div class="card-title-group">
-            <h3>Full-Stack Software Developer</h3>
-            <span class="company">Raythorne, Powersoft19</span>
+          <div class="cta-row">
+            <a class="btn primary" href="Resume/HasnatRasool_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <a class="btn secondary" href="#projects">View Projects</a>
           </div>
-          <span class="date-badge">Jan 2025 – Present</span>
-        </div>
-        <span class="location">📍 Lahore, Pakistan</span>
-        <ul class="achievements">
-          <li><span class="bullet">▸</span> Built Flask REST APIs handling <span class="highlight-number">4M+</span> products using MongoDB with optimized connection pooling.</li>
-          <li><span class="bullet">▸</span> Implemented NLP-based ingredient parsing with <span class="highlight-number">90%</span> accuracy and fuzzy matching across SQL datasets.</li>
-          <li><span class="bullet">▸</span> Developed ETL pipelines reducing API response time from <span class="highlight-number">2s</span> to <span class="highlight-number">200ms</span>.</li>
-          <li><span class="bullet">▸</span> Engineered RAG-based chatbots using LangChain, Ollama, and ChromaDB.</li>
-        </ul>
-        <button class="expand-btn">View Details <span class="expand-icon">▼</span></button>
-      </div>
 
-      <div class="card experience-card">
-        <div class="card-header">
-          <div class="card-title-group">
-            <h3>Web Development Intern</h3>
-            <span class="company">CyberSoft Vantage</span>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">Lahore, Pakistan</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Email</span>
+              <a class="meta-value link" href="mailto:hasnatrasool620@gmail.com">hasnatrasool620@gmail.com</a>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">LinkedIn</span>
+              <a class="meta-value link" href="https://linkedin.com/in/hasnatrasool/" target="_blank" rel="noopener">linkedin.com/in/hasnatrasool</a>
+            </div>
           </div>
-          <span class="date-badge">Jul 2023 – Oct 2024</span>
         </div>
-        <span class="location">📍 Islamabad, Pakistan</span>
-        <ul class="achievements">
-          <li><span class="bullet">▸</span> Developed MERN stack features using React hooks and Express APIs.</li>
-          <li><span class="bullet">▸</span> Worked with CI/CD pipelines and Git-based workflows.</li>
-        </ul>
-      </div>
 
-      <div class="card experience-card">
-        <div class="card-header">
-          <div class="card-title-group">
-            <h3>Teaching Assistant</h3>
-            <span class="company">FAST Islamabad</span>
+        <div class="hero-card">
+          <div class="profile">
+            <img src="images/profile.svg" alt="Profile avatar" />
+            <div class="profile-text">
+              <h2>Hasnat Rasool</h2>
+              <p>Full-Stack Software Developer</p>
+            </div>
           </div>
-          <span class="date-badge">Spring 2023 – Fall 2023</span>
-        </div>
-        <ul class="achievements">
-          <li><span class="bullet">▸</span> Conducted lab sessions for C/C++ and Data Structures.</li>
-          <li><span class="bullet">▸</span> Mentored 100+ students in debugging and problem solving.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
-  <!-- Projects -->
-  <section class="projects-section">
-    <h2 class="section-title">
-      <span class="title-icon">🚀</span>
-      Projects
-    </h2>
+          <div class="quick-stats">
+            <div class="stat">
+              <div class="stat-num">4M+</div>
+              <div class="stat-label">Products processed in production API</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">1M+</div>
+              <div class="stat-label">Data points visualized (WebGL charts)</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">RAG</div>
+              <div class="stat-label">LangChain • Ollama • ChromaDB</div>
+            </div>
+          </div>
 
-    <div class="projects-grid">
-      <div class="card project-card" data-card="clickable">
-        <div class="project-header">
-          <h3>TrustIsMust (FYP)</h3>
-          <span class="project-badge">Featured</span>
+          <div class="hero-links">
+            <a class="chip" href="mailto:hasnatrasool620@gmail.com" aria-label="Email">
+              <span>✉️</span><span>Email</span>
+            </a>
+            <a class="chip" href="https://linkedin.com/in/hasnatrasool/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <span>in</span><span>LinkedIn</span>
+            </a>
+            <a class="chip" href="#" aria-label="GitHub (set your link)">
+              <span>⌂</span><span>GitHub</span>
+            </a>
+          </div>
         </div>
-        <div class="tech-stack">
-          <span class="tech-tag">MERN</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Machine Learning</span>
-          <span class="tech-tag">AWS</span>
-        </div>
-        <ul class="project-features">
-          <li><span class="bullet">▸</span> Built fake review detection using Naive Bayes and PyABSA.</li>
-          <li><span class="bullet">▸</span> Deployed scalable review processing pipeline on AWS (EC2, S3, RDS).</li>
-        </ul>
-        <div class="card-ripple"></div>
       </div>
 
-      <div class="card project-card">
-        <div class="project-header">
-          <h3>EngineerBot – AI Technical Assistant</h3>
-          <span class="project-badge ai">AI</span>
-        </div>
-        <div class="tech-stack">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">LangChain</span>
-          <span class="tech-tag">Ollama</span>
-          <span class="tech-tag">RAG</span>
-          <span class="tech-tag">ChromaDB</span>
-        </div>
-        <ul class="project-features">
-          <li><span class="bullet">▸</span> Implemented RAG chatbot with 95%+ document retrieval relevance.</li>
-          <li><span class="bullet">▸</span> Handled 1,000+ engineering documents using vector embeddings.</li>
-        </ul>
+      <div class="scroll-hint">
+        <span class="scroll-dot"></span>
+        <span class="scroll-text">Scroll</span>
       </div>
+    </section>
 
-      <div class="card project-card">
-        <div class="project-header">
-          <h3>CSV Time-Series Visualization Tool</h3>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">About</h2>
+          <p class="section-subtitle">
+            I like building products that are fast, maintainable, and easy to operate.
+          </p>
         </div>
-        <div class="tech-stack">
-          <span class="tech-tag">Angular</span>
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">ECharts WebGL</span>
-        </div>
-        <ul class="project-features">
-          <li><span class="bullet">▸</span> Visualized 1M+ data points with real-time interaction.</li>
-          <li><span class="bullet">▸</span> Streamed 500MB+ CSV files without browser crashes.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
-  <!-- Education -->
-  <section class="education-section">
-    <h2 class="section-title">
-      <span class="title-icon">🎓</span>
-      Education
-    </h2>
-    <div class="card education-card">
-      <div class="education-icon">📚</div>
-      <div class="education-content">
-        <h3>Bachelor of Science in Computer Science</h3>
-        <span class="education-institution">FAST – National University</span>
-        <span class="education-period">2020 – 2024</span>
-      </div>
-    </div>
-  </section>
+        <div class="about-grid">
+          <div class="card">
+            <h3>Summary</h3>
+            <p>
+              Full-stack developer with a strong focus on backend systems in Python and modern frontends in React/Angular.
+              Experienced in building production APIs, ETL pipelines, web automation, and RAG-based assistants with local LLMs.
+            </p>
 
-  <!-- Certifications -->
-  <section class="certifications-section">
-    <h2 class="section-title">
-      <span class="title-icon">🏆</span>
-      Certifications
-    </h2>
-    <div class="certifications-grid">
-      <div class="cert-card">
-        <div class="cert-icon">☁️</div>
-        <div class="cert-content">
-          <h4>AWS Academy</h4>
-          <p>Microservices & CI/CD</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">💻</div>
-        <div class="cert-content">
-          <h4>freeCodeCamp</h4>
-          <p>JavaScript Algorithms & Data Structures</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">🌐</div>
-        <div class="cert-content">
-          <h4>W3Schools</h4>
-          <p>HTML & CSS</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">🐍</div>
-        <div class="cert-content">
-          <h4>DataCamp</h4>
-          <p>Introduction to Python</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="highlights">
+              <div class="highlight"><span class="dot"></span>Flask/FastAPI APIs with MongoDB & SQL Server</div>
+              <div class="highlight"><span class="dot"></span>RAG systems with LangChain, Ollama, ChromaDB</div>
+              <div class="highlight"><span class="dot"></span>Workflow automation with n8n + messaging APIs</div>
+              <div class="highlight"><span class="dot"></span>Data visualization at scale (ECharts WebGL)</div>
+            </div>
+          </div>
 
+          <div class="card">
+            <h3>What I do</h3>
+            <div class="services-grid">
+              <div class="service">
+                <div class="service-icon">🧩</div>
+                <div>
+                  <h4>Product Engineering</h4>
+                  <p>End-to-end features, clean APIs, and UI that stays responsive under load.</p>
+                </div>
+              </div>
+
+              <div class="service">
+                <div class="service-icon">🤖</div>
+                <div>
+                  <h4>AI / RAG Apps</h4>
+                  <p>Local LLM apps using retrieval, embeddings, and structured outputs.</p>
+                </div>
+              </div>
+
+              <div class="service">
+                <div class="service-icon">⚙️</div>
+                <div>
+                  <h4>Automation</h4>
+                  <p>n8n workflows, scraping, and integration between services & teams.</p>
+                </div>
+              </div>
+
+              <div class="service">
+                <div class="service-icon">📈</div>
+                <div>
+                  <h4>Data Systems</h4>
+                  <p>ETL pipelines, caching, and performance work for large datasets.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta">
+              <a class="btn tertiary" href="#contact">Let’s talk</a>
+              <a class="btn tertiary" href="Resume/HasnatRasool_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Skills</h2>
+          <p class="section-subtitle">Tools and technologies I use to ship.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card">
+            <h3>Languages</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">C/C++</span>
+              <span class="tag">C#</span>
+              <span class="tag">Java</span>
+              <span class="tag">SQL</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Solidity</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Frameworks</h3>
+            <div class="tags">
+              <span class="tag">Flask</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">React</span>
+              <span class="tag">Angular</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">.NET</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">Electron</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">n8n</span>
+              <span class="tag">Web3.js</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Databases</h3>
+            <div class="tags">
+              <span class="tag">MongoDB</span>
+              <span class="tag">MS SQL Server</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis</span>
+              <span class="tag">ChromaDB</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Tools & AI</h3>
+            <div class="tags">
+              <span class="tag">Git/GitHub</span>
+              <span class="tag">Docker</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Selenium</span>
+              <span class="tag">BeautifulSoup</span>
+              <span class="tag">ECharts</span>
+              <span class="tag">RAG</span>
+              <span class="tag">Ollama</span>
+              <span class="tag">Evolution API</span>
+              <span class="tag">Workflow Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">Recent roles and impact.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item card">
+            <div class="timeline-top">
+              <h3>Full-Stack Software Developer</h3>
+              <span class="timeline-date">Jan 2025 – Present • Lahore, Pakistan</span>
+            </div>
+            <p class="timeline-org">Raythorne</p>
+            <ul class="bullets">
+              <li>Built a Flask REST API processing 4M+ products with production-tuned MongoDB pooling and timeouts.</li>
+              <li>Implemented ingredient parsing and fuzzy matching against dynamic SQL Server tables.</li>
+              <li>Developed workflow automation integrating WhatsApp (Evolution API), n8n, and Smartsheet.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item card">
+            <div class="timeline-top">
+              <h3>Web Development Intern</h3>
+              <span class="timeline-date">Jul 2023 – Oct 2024 • Islamabad, Pakistan</span>
+            </div>
+            <p class="timeline-org">Powersoft19</p>
+            <ul class="bullets">
+              <li>Developed production MERN features with React hooks and Express.js REST APIs with MongoDB.</li>
+              <li>Worked in Git workflows: PRs, code reviews, and CI/CD best practices.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item card">
+            <div class="timeline-top">
+              <h3>Teaching Assistant</h3>
+              <span class="timeline-date">Spring 2023 – Fall 2023 • FAST, Islamabad</span>
+            </div>
+            <p class="timeline-org">National University of Computer and Emerging Sciences (FAST)</p>
+            <ul class="bullets">
+              <li>Conducted lab sessions for C/C++ programming, data structures, and debugging for 100+ students.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item card">
+            <div class="timeline-top">
+              <h3>Event Manager</h3>
+              <span class="timeline-date">Sept 2022 – Dec 2022 • Islamabad</span>
+            </div>
+            <p class="timeline-org">TEDxFASTIslamabad</p>
+            <ul class="bullets">
+              <li>Managed operations and logistics for FAST’s first official TEDx event.</li>
+              <li>Coordinated speakers, venue setup, and audience engagement initiatives.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">
+            Selected work — update the GitHub links to your repos.
+          </p>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ai">AI / RAG</button>
+          <button class="filter-btn" data-filter="automation">Automation</button>
+          <button class="filter-btn" data-filter="backend">APIs</button>
+          <button class="filter-btn" data-filter="frontend">Data Viz</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project cards -->
+          <article class="project card" data-tags="ai backend">
+            <div class="project-head">
+              <h3>EngineerBot — AI Technical Assistant</h3>
+              <span class="badge">RAG</span>
+            </div>
+            <p>
+              RAG chatbot using LangChain + Ollama with ChromaDB for fast, relevant retrieval over engineering notes.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">ChromaDB</span><span class="tag">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+              <a href="#" class="link">Demo</a>
+            </div>
+          </article>
+
+          <article class="project card" data-tags="ai backend">
+            <div class="project-head">
+              <h3>PizzaBot — Review QA Assistant</h3>
+              <span class="badge">Local LLM</span>
+            </div>
+            <p>
+              Streamlit app that answers questions about restaurant reviews using retrieval + local LLM generation.
+            </p>
+            <div class="tags">
+              <span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">ChromaDB</span><span class="tag">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project card" data-tags="automation backend">
+            <div class="project-head">
+              <h3>WhatsApp Automation Stack</h3>
+              <span class="badge">Docker</span>
+            </div>
+            <p>
+              Dockerized stack with Evolution API, PostgreSQL, Redis, and n8n for WhatsApp workflow automation.
+            </p>
+            <div class="tags">
+              <span class="tag">Docker</span><span class="tag">n8n</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Evolution API</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project card" data-tags="frontend">
+            <div class="project-head">
+              <h3>CSV Time Series Visualization</h3>
+              <span class="badge">WebGL</span>
+            </div>
+            <p>
+              High-performance Angular charting app for large CSV time-series datasets with multi-channel views and export.
+            </p>
+            <div class="tags">
+              <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">ECharts</span><span class="tag">WebGL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project card" data-tags="backend">
+            <div class="project-head">
+              <h3>Ingredient Parser API</h3>
+              <span class="badge">FastAPI</span>
+            </div>
+            <p>
+              API that fetches product ingredients from MongoDB and parses them into structured outputs.
+            </p>
+            <div class="tags">
+              <span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">NLP</span><span class="tag">Pydantic</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project card" data-tags="backend">
+            <div class="project-head">
+              <h3>OFF Slicer API</h3>
+              <span class="badge">Rule-based</span>
+            </div>
+            <p>
+              Lightweight FastAPI service using ingredient-slicer for fast parsing with optional MongoDB integration.
+            </p>
+            <div class="tags">
+              <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project card" data-tags="automation ai">
+            <div class="project-head">
+              <h3>ArgosTranslateTest</h3>
+              <span class="badge">Offline</span>
+            </div>
+            <p>
+              Offline ingredient translation tool with heuristics for language detection and domain-specific cleanup.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Argos Translate</span><span class="tag">NLP</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project card" data-tags="backend automation">
+            <div class="project-head">
+              <h3>ChatGPT Export Migration Tool</h3>
+              <span class="badge">Utility</span>
+            </div>
+            <p>
+              Script to split ChatGPT export files into per-conversation JSON/Markdown with safe filenames and filters.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">CLI</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project card" data-tags="ai frontend backend">
+            <div class="project-head">
+              <h3>TrustIsMust (FYP)</h3>
+              <span class="badge">ML</span>
+            </div>
+            <p>
+              MERN system with ML integration to detect fake reviews and compute trust scores.
+            </p>
+            <div class="tags">
+              <span class="tag">React</span><span class="tag">Node</span><span class="tag">Python</span><span class="tag">AWS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Certifications</h2>
+          <p class="section-subtitle">A few credentials and learning milestones.</p>
+        </div>
+
+        <div class="cert-grid">
+          <div class="card cert">
+            <h3>AWS Academy Graduate</h3>
+            <p>AWS Academy Microservices and CI/CD Pipeline Builder</p>
+          </div>
+          <div class="card cert">
+            <h3>freeCodeCamp</h3>
+            <p>JavaScript Algorithms and Data Structures</p>
+          </div>
+          <div class="card cert">
+            <h3>W3Schools</h3>
+            <p>HTML and CSS</p>
+          </div>
+          <div class="card cert">
+            <h3>DataCamp</h3>
+            <p>Introduction to Python</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Want to collaborate or hire? Send a message.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Reach me</h3>
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <a class="contact-value link" href="mailto:hasnatrasool620@gmail.com">hasnatrasool620@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Phone</span>
+              <a class="contact-value link" href="tel:+923037364710">+92 303 7364710</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">LinkedIn</span>
+              <a class="contact-value link" href="https://linkedin.com/in/hasnatrasool/" target="_blank" rel="noopener">linkedin.com/in/hasnatrasool</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">GitHub</span>
+              <a class="contact-value link" href="#" target="_blank" rel="noopener">Add your GitHub link</a>
+            </div>
+
+            <p class="muted" style="margin-top:14px">
+              Tip: if you don’t want to show your phone publicly, remove it from this section.
+            </p>
+          </div>
+
+          <form class="card contact-form" action="mailto:hasnatrasool620@gmail.com" method="post" enctype="text/plain">
+            <h3>Send a message</h3>
+
+            <label>
+              <span>Name</span>
+              <input name="name" placeholder="Your name" required />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" placeholder="you@example.com" required />
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="6" placeholder="How can I help?" required></textarea>
+            </label>
+
+            <button class="btn primary" type="submit">Send</button>
+            <p class="muted small">This uses your email client (mailto) since the site is static.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer-content">
-      <p>© 2026 Hasnat Rasool. Built with passion and modern web technologies.</p>
-      <div class="footer-stats">
-        <div class="stat-item">
-          <span class="stat-number" data-target="4">0</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="20">0</span>
-          <span class="stat-label">Technologies</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="10">0</span>
-          <span class="stat-label">Projects</span>
-        </div>
-      </div>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Hasnat Rasool. Built as a static portfolio.</p>
+      <a class="link" href="#top">Back to top</a>
     </div>
   </footer>
+
+  <button class="to-top" id="to-top" aria-label="Scroll to top">↑</button>
 
   <script src="script.js"></script>
 </body>
