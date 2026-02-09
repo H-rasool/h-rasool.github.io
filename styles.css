@@ -616,3 +616,16 @@ input:focus, textarea:focus{ border-color: rgba(67,97,238,.40); box-shadow: 0 0 
   }
   .nav-links.open{ display:flex; }
 }
+
+.project.card:hover{
+  /* transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease); */
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
