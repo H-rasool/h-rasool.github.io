@@ -136,6 +136,18 @@
     });
   }
 
+  // Flip card: tap-to-flip on touch devices (hover works on desktop)
+  const flipCard = document.querySelector(".hero-card.flip-card");
+  if (flipCard) {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const hasHover = window.matchMedia("(hover: hover)").matches;
+    if (!hasHover && !prefersReducedMotion) {
+      flipCard.addEventListener("click", (e) => {
+        if (!e.target.closest("a")) flipCard.classList.toggle("flipped");
+      });
+    }
+  }
+
   // Project filtering
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projects = document.querySelectorAll(".project");

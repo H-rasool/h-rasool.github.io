@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hasnat Rasool | Full-Stack Software Developer</title>
+  <title>Hasnat Rasool | AI Engineer & Full-Stack Developer</title>
   <meta name="description" content="Portfolio of Hasnat Rasool — Full-Stack Software Developer (Python, React, Angular, FastAPI, Docker, RAG systems)." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +55,7 @@
     <section class="hero section">
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="pill">Full-Stack Software Developer • AI / RAG • Automation</p>
+          <p class="pill">AI Engineer | Full-Stack Developer</p>
           <h1 class="hero-title">
             Building reliable products with
             <span class="gradient-text">Python</span>,
@@ -64,7 +64,7 @@
           </h1>
 
           <p class="hero-subtitle">
-            I build end-to-end applications (Flask/FastAPI + React/Angular), data pipelines,
+            I build end-to-end applications, data pipelines,
             and local AI assistants using RAG, vector databases, and workflow automation.
           </p>
 
@@ -89,40 +89,49 @@
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="profile">
-            <img src="Images/Hasnat.png" alt="Profile Hasnat" />
-            <div class="profile-text">
-              <h2>Hasnat Rasool</h2>
-              <p>Full-Stack Software Developer</p>
+        <div class="hero-card flip-card">
+          <div class="flip-card-inner">
+            <!-- Front: Full profile image -->
+            <div class="flip-card-front">
+              <div class="flip-card-front-bg" style="background-image: url('Images/Hasnat.png');"></div>
+              <div class="flip-card-front-overlay">
+                <h2>Hasnat Rasool</h2>
+                <p>Full-Stack Software Developer</p>
+              </div>
             </div>
-          </div>
 
-          <div class="quick-stats">
-            <div class="stat">
-              <div class="stat-num">4M+</div>
-              <div class="stat-label">Products processed in production API</div>
+            <!-- Back: Stats -->
+            <div class="flip-card-back">
+              <div class="flip-card-back-header">
+                <h2>Hasnat Rasool</h2>
+                <p>AI Engineer | Full-Stack Developer</p>
+              </div>
+              <div class="quick-stats">
+                <div class="stat">
+                  <div class="stat-num">4M+</div>
+                  <div class="stat-label">Products processed in production API</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-num">n8n</div>
+                  <div class="stat-label">Workflow Automation</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-num">RAG</div>
+                  <div class="stat-label">LangChain • Ollama • ChromaDB</div>
+                </div>
+              </div>
+              <div class="hero-links">
+                <a class="chip" href="mailto:hasnatrasool620@gmail.com" aria-label="Email">
+                  <span>✉️</span><span>Email</span>
+                </a>
+                <a class="chip" href="https://linkedin.com/in/hasnatrasool/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <span>in</span><span>LinkedIn</span>
+                </a>
+                <a class="chip" href="https://github.com/H-rasool" target="_blank" rel="noopener" aria-label="GitHub">
+                  <span>⌂</span><span>GitHub</span>
+                </a>
+              </div>
             </div>
-            <div class="stat">
-              <div class="stat-num">1M+</div>
-              <div class="stat-label">Data points visualized (WebGL charts)</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">RAG</div>
-              <div class="stat-label">LangChain • Ollama • ChromaDB</div>
-            </div>
-          </div>
-
-          <div class="hero-links">
-            <a class="chip" href="mailto:hasnatrasool620@gmail.com" aria-label="Email">
-              <span>✉️</span><span>Email</span>
-            </a>
-            <a class="chip" href="https://linkedin.com/in/hasnatrasool/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <span>in</span><span>LinkedIn</span>
-            </a>
-            <a class="chip" href="#" aria-label="GitHub (set your link)">
-              <span>⌂</span><span>GitHub</span>
-            </a>
           </div>
         </div>
       </div>
@@ -292,9 +301,14 @@
             </div>
             <p class="timeline-org">Raythorne</p>
             <ul class="bullets">
-              <li>Built a Flask REST API processing 4M+ products with production-tuned MongoDB pooling and timeouts.</li>
-              <li>Implemented ingredient parsing and fuzzy matching against dynamic SQL Server tables.</li>
-              <li>Developed workflow automation integrating WhatsApp (Evolution API), n8n, and Smartsheet.</li>
+              <li>Built a Flask REST API processing 4M+ products (MongoDB) with singleton connection pooling (maxPoolSize=50) and optimized timeout configurations for production reliability. NLP ingredient parsing (90% accuracy) and fuzzy matching (85%+ accuracy) across dynamic MS SQL Server tables, including E-codes, labeled ingredients, and scraped data from multiple sources.</li>
+              <li>Engineered RAG-based chatbots using LangChain and Ollama (Llama 3.2) with ChromaDB vector databases for context-aware technical assistance and conversation memory management.</li>
+              <li>Developed an automated task management workflow using n8n, integrating the Evolution WhatsApp API with Smartsheet, scheduled morning triggers for task distribution, and webhook-based response processing. Built JavaScript code blocks for parsing employee status updates (Completed/In Progress/Pending) with bidirectional API synchronization updating Smartsheet rows in real-time.</li>
+              <li>Engineered ETL pipelines for automated data extraction (web scraping), transformation (NLP parsing, normalization), and loading into SQL Server, with in-memory caching reducing API response times from 2s to 200ms.</li>
+              <li>Developed an automated web scraping system using Selenium and BeautifulSoup for extracting ingredient data with pagination handling, retry logic, and structured CSV export for database import.</li>
+              <li>Designed Angular applications for time-series visualization using ECharts WebGL, handling 1M+ data points with real-time interaction, custom timestamp parsing, and CSV export functionality.</li>
+              <li>Built desktop applications using Electron.js and .NET (C# WinForms) for internal data management, image processing tools, and cross-platform utilities with secure IPC communication.</li>
+              <li>Collaborated with a 3-person development team using Git workflows, conducting code reviews, and participating in daily standups for feature development.</li>
             </ul>
           </div>
 
@@ -305,31 +319,30 @@
             </div>
             <p class="timeline-org">Powersoft19</p>
             <ul class="bullets">
-              <li>Developed production MERN features with React hooks and Express.js REST APIs with MongoDB.</li>
-              <li>Worked in Git workflows: PRs, code reviews, and CI/CD best practices.</li>
+              <li>Developed production MERN application features, including implementing React components with hooks and state management and collaborating on Express.js REST APIs with MongoDB integration.</li>
+              <li>Participated in Git-based workflows, including code reviews, pull requests, and CI/CD pipelines, ensuring code quality and deployment standards.</li>
             </ul>
           </div>
 
           <div class="timeline-item card">
             <div class="timeline-top">
               <h3>Teaching Assistant</h3>
-              <span class="timeline-date">Spring 2023 – Fall 2023 • FAST, Islamabad</span>
+              <span class="timeline-date">Spring 2023 – Fall 2023 • Islamabad, Pakistan</span>
             </div>
             <p class="timeline-org">National University of Computer and Emerging Sciences (FAST)</p>
             <ul class="bullets">
-              <li>Conducted lab sessions for C/C++ programming, data structures, and debugging for 100+ students.</li>
+              <li>Conducted lab sessions for CS 118, CS 1004, and CS 2001, mentoring 100+ students in C/C++ programming, data structures, and debugging techniques.</li>
             </ul>
           </div>
 
           <div class="timeline-item card">
             <div class="timeline-top">
               <h3>Event Manager</h3>
-              <span class="timeline-date">Sept 2022 – Dec 2022 • Islamabad</span>
+              <span class="timeline-date">Sept 2022 – Dec 2022 • Islamabad, Pakistan</span>
             </div>
             <p class="timeline-org">TEDxFASTIslamabad</p>
             <ul class="bullets">
-              <li>Managed operations and logistics for FAST’s first official TEDx event.</li>
-              <li>Coordinated speakers, venue setup, and audience engagement initiatives.</li>
+              <li>Managed operations and logistics for FAST's first official TEDx event, coordinating speakers, venue setup, and audience engagement initiatives.</li>
             </ul>
           </div>
         </div>
@@ -358,7 +371,7 @@
           <!-- Project cards -->
           <article class="project card" data-tags="ai backend">
             <div class="project-head">
-              <h3>EngineerBot — AI Technical Assistant</h3>
+              <h3>EngineerBot: AI Technical Assistant</h3>
               <span class="badge">RAG</span>
             </div>
             <p>
@@ -368,24 +381,24 @@
               <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">ChromaDB</span><span class="tag">Streamlit</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
-              <a href="#" class="link">Demo</a>
+              <a href="https://github.com/H-rasool/EngineerBot" class="link">GitHub</a>
+              <!-- <a href="#" class="link">Demo</a> -->
             </div>
           </article>
 
           <article class="project card" data-tags="ai backend">
             <div class="project-head">
-              <h3>PizzaBot — Review QA Assistant</h3>
-              <span class="badge">Local LLM</span>
+              <h3>PizzaBot: Review QA Assistant</h3>
+              <span class="badge">RAG/Local LLM</span>
             </div>
             <p>
-              Streamlit app that answers questions about restaurant reviews using retrieval + local LLM generation.
+              Streamlit app that answers questions about restaurant reviews using RAG + local LLM generation.
             </p>
             <div class="tags">
               <span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">ChromaDB</span><span class="tag">Streamlit</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
+              <a href="https://github.com/H-rasool/resturant-bot" class="link">GitHub</a>
             </div>
           </article>
 
@@ -401,7 +414,7 @@
               <span class="tag">Docker</span><span class="tag">n8n</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Evolution API</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
+              <a href="https://github.com/H-rasool/EvolutionAPI-n8n" class="link">GitHub</a>
             </div>
           </article>
 
@@ -417,7 +430,7 @@
               <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">ECharts</span><span class="tag">WebGL</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
+              <a href="https://github.com/H-rasool/time-series-visiualization-tool" class="link">GitHub</a>
             </div>
           </article>
 
@@ -433,7 +446,7 @@
               <span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">NLP</span><span class="tag">Pydantic</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
+              <a href="https://github.com/H-rasool/Ingredient-Parser" class="link">GitHub</a>
             </div>
           </article>
 
@@ -449,7 +462,7 @@
               <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">MongoDB</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
+              <a href="https://github.com/H-rasool/Ingredient-Off-slicer" class="link">GitHub</a>
             </div>
           </article>
 
@@ -465,7 +478,7 @@
               <span class="tag">Python</span><span class="tag">Argos Translate</span><span class="tag">NLP</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
+              <a href="https://github.com/H-rasool/Argos-Translate-en" class="link">GitHub</a>
             </div>
           </article>
 
@@ -481,7 +494,7 @@
               <span class="tag">Python</span><span class="tag">CLI</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
+              <a href="https://github.com/H-rasool/GPT-chat-splitter" class="link">GitHub</a>
             </div>
           </article>
 
@@ -497,7 +510,7 @@
               <span class="tag">React</span><span class="tag">Node</span><span class="tag">Python</span><span class="tag">AWS</span>
             </div>
             <div class="project-links">
-              <a href="#" class="link">GitHub</a>
+              <!-- <a href="#" class="link">GitHub</a> -->
             </div>
           </article>
         </div>
@@ -558,7 +571,7 @@
             </div>
             <div class="contact-item">
               <span class="contact-label">GitHub</span>
-              <a class="contact-value link" href="#" target="_blank" rel="noopener">Add your GitHub link</a>
+              <a class="contact-value link" href="https://github.com/H-rasool" target="_blank" rel="noopener">github.com/H-rasool</a>
             </div>
 
             <!-- <p class="muted" style="margin-top:14px">
