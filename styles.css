@@ -332,21 +332,20 @@ header.scrolled{
 
 /* Flip card container */
 .hero-card{
-  position: sticky;
+  position:sticky;
   top: 96px;
-  align-self: start;
+  align-self:start;
   border-radius: calc(var(--radius) + 2px);
   border: 1px solid rgba(67,97,238,.18);
   box-shadow: var(--shadow-md);
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
 .flip-card{
-  position: relative;
   width: 100%;
   min-width: 280px;
   max-width: 360px;
-  height: 420px;
+  aspect-ratio: 3 / 4;
 }
 
 .flip-card-inner{
@@ -354,34 +353,25 @@ header.scrolled{
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transition: transform 0.6s var(--ease);
-  -webkit-transition: transform 0.6s var(--ease);
-}
-
-/* Hover: rotate the entire inner container */
-.hero-card:hover .flip-card-inner,
-.hero-card.flipped .flip-card-inner{
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
 }
 
 /* Front: Full profile image */
 .flip-card-front,
 .flip-card-back{
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   border-radius: calc(var(--radius) + 2px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-transition: transform .5s var(--ease);
+  -moz-transition: transform .5s var(--ease);
+  -ms-transition: transform .5s var(--ease);
+  -o-transition: transform .5s var(--ease);
+  transition: transform .5s var(--ease);
 }
 
 .flip-card-front{
-  z-index: 2;
-  transform: rotateY(0deg);
+  transform: perspective(1200px) rotateY(0deg);
   overflow: hidden;
 }
 
@@ -420,8 +410,7 @@ header.scrolled{
 
 /* Back: Stats */
 .flip-card-back{
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
+  transform: perspective(1200px) rotateY(180deg);
   padding: 20px;
   background: linear-gradient(180deg, rgba(67,97,238,.10), rgba(247,37,133,.06)), var(--card);
   display: flex;
@@ -447,6 +436,17 @@ header.scrolled{
   font-size: 12px;
   color: var(--text-muted);
   font-weight: 700;
+}
+
+/* Hover: flip to back (desktop) */
+.hero-card:hover .flip-card-front,
+.hero-card.flipped .flip-card-front{
+  transform: perspective(1200px) rotateY(-180deg);
+}
+
+.hero-card:hover .flip-card-back,
+.hero-card.flipped .flip-card-back{
+  transform: perspective(1200px) rotateY(0deg);
 }
 
 .quick-stats{
@@ -550,27 +550,117 @@ header.scrolled{
 }
 .dark-mode .tag{ background: rgba(76,201,240,.10); border-color: rgba(76,201,240,.14); }
 
-/* Experience */
-.timeline{ display:grid; gap: 14px; }
-.timeline-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap: 14px;
+/* Experience — Timeline with vertical line, dots, and hover */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 50px;
 }
-.timeline-date{
-  color: var(--text-muted);
-  font-weight: 800;
-  font-size: 12px;
-  white-space: nowrap;
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: var(--gradient);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin-left: -2px;
+  border-radius: 2px;
 }
-.timeline-org{
-  margin: 6px 0 0;
+
+.experience-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+
+.experience-item:hover {
+  transform: translateX(10px);
+  box-shadow: var(--shadow-md);
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  background: var(--gradient);
+  border: 4px solid var(--card);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.experience-date {
+  font-weight: 700;
   color: var(--primary);
-  font-weight: 900;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
 }
-.bullets{ margin: 12px 0 0; padding-left: 18px; color: var(--text-muted); font-weight: 650; line-height: 1.6; }
-.bullets li{ margin: 6px 0; }
+
+.experience-date i {
+  color: var(--accent);
+}
+
+.experience-title {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+
+.experience-company {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.experience-company i {
+  color: var(--primary);
+}
+
+.experience-description {
+  padding-left: 20px;
+  margin: 0;
+  color: var(--text-muted);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.experience-description li {
+  margin-bottom: 10px;
+  position: relative;
+  list-style-type: none;
+}
+
+.experience-description li::before {
+  content: "▹";
+  position: absolute;
+  left: -20px;
+  color: var(--accent);
+}
+
+.dark-mode .experience-item {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.dark-mode .experience-item::before {
+  border-color: var(--card);
+}
 
 /* Projects */
 .filters{
@@ -687,7 +777,7 @@ input:focus, textarea:focus{ border-color: rgba(67,97,238,.40); box-shadow: 0 0 
 @media (max-width: 980px){
   .hero-grid{ grid-template-columns: 1fr; }
   .hero-card{ position: relative; top: 0; }
-  .flip-card{ max-width: 320px; height: 400px; margin: 0 auto; }
+  .flip-card{ max-width: 320px; margin: 0 auto; }
   .skills-grid{ grid-template-columns: repeat(2, 1fr); }
   .projects-grid{ grid-template-columns: repeat(2, 1fr); }
   .cert-grid{ grid-template-columns: repeat(2, 1fr); }
@@ -697,6 +787,9 @@ input:focus, textarea:focus{ border-color: rgba(67,97,238,.40); box-shadow: 0 0 
   .section-head{ flex-direction: column; align-items:flex-start; }
   .about-grid, .contact-grid{ grid-template-columns: 1fr; }
   .projects-grid{ grid-template-columns: 1fr; }
+
+  .timeline{ padding-left: 30px; }
+  .experience-item{ padding: 20px; }
 
   .nav-toggle{ display:block; }
   .nav-links{
