@@ -1,697 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hasnat Rasool | AI Engineer & Full-Stack Developer</title>
-  <meta name="description" content="Portfolio of Hasnat Rasool — Full-Stack Software Developer (Python, React, Angular, FastAPI, Docker, RAG systems)." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Hasnat Rasool | AI/ML Software Engineer</title>
+  <meta name="description"
+    content="Hasnat Rasool — AI/ML Software Engineer building agentic AI systems, RAG pipelines, and full-stack platforms with Next.js, NestJS, Flask, and Angular." />
+  <meta name="author" content="Hasnat Rasool" />
+  <meta name="theme-color" content="#6c63ff" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hasnat Rasool | AI/ML Software Engineer" />
+  <meta property="og:description"
+    content="AI/ML Software Engineer specialising in agentic AI systems, RAG pipelines, LLM cost/latency optimisation, and multi-tenant SaaS architecture." />
+  <meta property="og:url" content="https://h-rasool.github.io/" />
+  <meta property="og:image" content="https://h-rasool.github.io/Images/Hasnat.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href="https://h-rasool.github.io/" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%236c63ff'/><stop offset='100%25' stop-color='%2306b6d4'/></linearGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23grad)'/><text x='50' y='65' font-family='monospace' font-size='42' font-weight='bold' text-anchor='middle' fill='white'>HR</text></svg>" />
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!--
+    Runs before first paint so the page never flashes the wrong theme, and so the
+    scroll-reveal animation is only armed when scripting is actually available
+    (without JS, `.js-loaded` is never set and all content stays visible).
+  -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js-loaded");
+      try {
+        var saved = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        root.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
+      } catch (e) {
+        root.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
 </head>
 
 <body>
-  <!-- Background accents -->
-  <div class="bg-accent bg-accent-1"></div>
-  <div class="bg-accent bg-accent-2"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
-  <header id="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="brand-mark">HR</span>
-        <span class="brand-text">Hasnat Rasool</span>
+  <!-- ==================== Header ==================== -->
+  <header id="header">
+    <div class="container header-content">
+      <a href="#" class="logo" aria-label="Hasnat Rasool — home">
+        <span class="logo-icon">HR</span>
+        <span class="logo-text">Hasnat Rasool</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-
-        <ul class="nav-links" id="nav-links">
+      <nav id="nav" aria-label="Primary">
+        <ul class="nav-links">
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#certifications" class="nav-link">Certifications</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <span class="toggle-track">
-            <span class="toggle-thumb" id="toggle-thumb"></span>
-          </span>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle colour theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+          </svg>
+        </button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main id="top">
-    <section class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="pill">AI Engineer | Full-Stack Developer</p>
-          <h1 class="hero-title">
-            Building reliable products with
-            <span class="gradient-text">Python</span>,
-            <span class="gradient-text">modern web</span>, and
-            <span class="gradient-text">AI systems</span>.
-          </h1>
-
-          <p class="hero-subtitle">
-            I build end-to-end applications, data pipelines,
-            and local AI assistants using RAG, vector databases, and workflow automation.
+  <main id="main">
+    <!-- ==================== Hero ==================== -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="hero-greeting">
+            <span class="mono">Hello, I'm</span>
+          </p>
+          <h1 class="hero-name">Hasnat Rasool<span class="accent-dot">.</span></h1>
+          <h2 class="hero-title">
+            <span class="typing-wrapper">
+              <span id="typed-text"
+                data-titles="AI/ML Software Engineer|Agentic AI Engineer|Full-Stack Developer|RAG &amp; LLM Systems Engineer"></span><span
+                class="cursor">|</span>
+            </span>
+          </h2>
+          <p class="hero-description">
+            I build agentic AI systems, RAG pipelines, and full-stack platforms — from LangGraph
+            orchestration and LLM cost/latency optimisation to multi-tenant SaaS architecture and
+            high-throughput data systems processing 4M+ records.
           </p>
 
-          <div class="cta-row">
-            <a class="btn primary" href="Resume/HasnatRasool_Resume.pdf" download="HasnatRasool_Resume.pdf">Download Resume</a>
-            <a class="btn secondary" href="#projects">View Projects</a>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="#projects" class="btn btn-outline">View My Work</a>
+            <a href="./Resume/Hasnat_Rasool_Resume.pdf" download="Hasnat Rasool - Resume.pdf" class="btn btn-ghost">
+              <i class="fas fa-download" aria-hidden="true"></i> Resume
+            </a>
           </div>
 
-          <div class="hero-meta">
-            <div class="meta-item">
-              <span class="meta-label">Current Location</span>
-              <span class="meta-value">Lahore, Pakistan</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Email</span>
-              <a class="meta-value link" href="mailto:hasnatrasool620@gmail.com">hasnatrasool620@gmail.com</a>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">LinkedIn</span>
-              <a class="meta-value link" href="https://linkedin.com/in/hasnatrasool/" target="_blank" rel="noopener">linkedin.com/in/hasnatrasool</a>
-            </div>
+          <div class="hero-links">
+            <a href="https://github.com/H-rasool" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+                class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="https://linkedin.com/in/hasnatrasool" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a href="mailto:hasnatrasool620@gmail.com" aria-label="Email"><i class="far fa-envelope"
+                aria-hidden="true"></i></a>
+            <a href="tel:+923037364710" aria-label="Phone"><i class="fas fa-phone-alt" aria-hidden="true"></i></a>
           </div>
         </div>
 
-        <div class="hero-card flip-card">
-          <div class="flip-card-inner">
-            <!-- Front: Full profile image -->
-            <div class="flip-card-front">
-              <div class="flip-card-front-bg" style="background-image: url('Images/Hasnat.png');"></div>
-              <div class="flip-card-front-overlay">
-                <h2>Hasnat Rasool</h2>
-                <p>Full-Stack AI Engineer</p>
-              </div>
-            </div>
-
-            <!-- Back: Stats -->
-            <div class="flip-card-back">
-              <div class="flip-card-back-header">
-                <h2>Hasnat Rasool</h2>
-                <p>AI Engineer | Full-Stack Developer</p>
-              </div>
-              <div class="quick-stats">
-                <div class="stat">
-                  <div class="stat-num">4M+</div>
-                  <div class="stat-label">Products processed in production API</div>
-                </div>
-                <div class="stat">
-                  <div class="stat-num">n8n</div>
-                  <div class="stat-label">Workflow Automation</div>
-                </div>
-                <div class="stat">
-                  <div class="stat-num">RAG</div>
-                  <div class="stat-label">LangChain • Ollama • ChromaDB</div>
-                </div>
-              </div>
-              <div class="hero-links">
-                <a class="chip" href="mailto:hasnatrasool620@gmail.com" aria-label="Email">
-                  <span>✉️</span><span>Email</span>
-                </a>
-                <a class="chip" href="https://linkedin.com/in/hasnatrasool/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                  <span>in</span><span>LinkedIn</span>
-                </a>
-                <a class="chip" href="https://github.com/H-rasool" target="_blank" rel="noopener" aria-label="GitHub">
-                  <span>⌂</span><span>GitHub</span>
-                </a>
-              </div>
-            </div>
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img src="./Images/Hasnat.png" alt="Portrait of Hasnat Rasool" class="hero-image" width="320" height="380"
+              loading="eager" decoding="async" onload="this.classList.add('loaded')" />
+            <div class="hero-image-border"></div>
           </div>
         </div>
       </div>
 
-      <div class="scroll-hint">
-        <span class="scroll-dot"></span>
-        <span class="scroll-text">Scroll</span>
+      <div class="hero-scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ==================== About ==================== -->
     <section id="about" class="section">
       <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">About</h2>
-          <p class="section-subtitle">
-            I like building products that are fast, maintainable, and easy to operate.
-          </p>
+        <div class="section-header reveal">
+          <span class="section-label mono">01. About</span>
+          <h2 class="section-title">About Me</h2>
         </div>
 
-        <div class="about-grid">
-          <div class="card">
-            <h3>Summary</h3>
+        <div class="about-content reveal">
+          <div class="about-text">
             <p>
-              Full-stack developer with a strong focus on backend systems in Python and modern frontends in React/Angular.
-              Experienced in building production APIs, ETL pipelines, web automation, and RAG-based assistants with local LLMs.
+              I'm an <strong>AI/ML Software Engineer</strong> with 2+ years of experience building
+              agentic AI systems, retrieval-augmented generation pipelines, and production full-stack
+              platforms across <strong>Next.js</strong>, <strong>NestJS</strong>, <strong>Flask</strong>
+              and <strong>Angular</strong>.
+            </p>
+            <p>
+              My work centres on making language models cheap, fast and dependable in production —
+              orchestrating them with <strong>LangGraph</strong>, tracing every run through
+              <strong>LangSmith</strong>, and designing deterministic fallbacks so a pipeline never
+              depends on a single provider staying up. Alongside that, I design multi-tenant SaaS
+              architecture and high-throughput data systems that handle millions of records.
             </p>
 
-            <div class="highlights">
-              <div class="highlight"><span class="dot"></span>Flask/FastAPI APIs with MongoDB & SQL Server</div>
-              <div class="highlight"><span class="dot"></span>RAG systems with LangChain, Ollama, ChromaDB</div>
-              <div class="highlight"><span class="dot"></span>Workflow automation with n8n + messaging APIs</div>
-              <div class="highlight"><span class="dot"></span>Data visualization at scale (ECharts WebGL)</div>
+            <div class="about-education">
+              <span class="about-education-label mono">Education</span>
+              <h3>Bachelor of Science in Computer Science</h3>
+              <p>National University of Computer and Emerging Sciences (FAST)</p>
+              <p class="edu-meta mono">Islamabad, Pakistan &middot; 2020 &ndash; 2024</p>
             </div>
           </div>
 
-          <div class="card">
-            <h3>What I do</h3>
-            <div class="services-grid">
-              <div class="service">
-                <div class="service-icon">🧩</div>
-                <div>
-                  <h4>Product Engineering</h4>
-                  <p>End-to-end features, clean APIs, and UI that stays responsive under load.</p>
-                </div>
-              </div>
-
-              <div class="service">
-                <div class="service-icon">🤖</div>
-                <div>
-                  <h4>AI / RAG Apps</h4>
-                  <p>Local LLM apps using retrieval, embeddings, and structured outputs.</p>
-                </div>
-              </div>
-
-              <div class="service">
-                <div class="service-icon">⚙️</div>
-                <div>
-                  <h4>Automation</h4>
-                  <p>n8n workflows, scraping, and integration between services & teams.</p>
-                </div>
-              </div>
-
-              <div class="service">
-                <div class="service-icon">📈</div>
-                <div>
-                  <h4>Data Systems</h4>
-                  <p>ETL pipelines, caching, and performance work for large datasets.</p>
-                </div>
-              </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number" data-count="2">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
-
-            <div class="about-cta">
-              <a class="btn tertiary" href="#contact">Let’s talk</a>
-              <a class="btn tertiary" href="Resume/HasnatRasool_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+            <div class="stat-card">
+              <span class="stat-number" data-count="9">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="5">0</span><span class="stat-suffix"></span>
+              <span class="stat-label">Organisations</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="4">0</span><span class="stat-suffix"></span>
+              <span class="stat-label">Certifications</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section section-alt">
+    <!-- ==================== Experience ==================== -->
+    <section id="experience" class="section section-alt">
       <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">Skills</h2>
-          <p class="section-subtitle">Technologies I work with</p>
+        <div class="section-header reveal">
+          <span class="section-label mono">02. Experience</span>
+          <h2 class="section-title">Where I've Worked</h2>
         </div>
 
-        <div class="skills-container">
-          <div class="skills-grid">
-            <div class="skill-item">
-              <i class="devicon-python-plain"></i>
-              <span>Python</span>
+        <div class="experience-list">
+          <!-- Techverx -->
+          <div class="exp-card reveal">
+            <div class="exp-header">
+              <div class="exp-meta">
+                <h3 class="exp-role">Software Engineer &mdash; AI/ML <span class="exp-badge">Current</span></h3>
+                <a href="https://techverx.com/" target="_blank" rel="noopener noreferrer" class="exp-company">@ Techverx
+                  <span class="exp-location">Lahore, Pakistan</span></a>
+              </div>
+              <span class="exp-date mono">May 2026 &mdash; Present</span>
             </div>
-            <div class="skill-item">
-              <i class="fab fa-js"></i>
-              <span>JavaScript</span>
+            <ul class="exp-details">
+              <li>Migrated an agentic AI workflow (OpenAI GPT, Serper search integration) from n8n to LangGraph,
+                redesigning orchestration logic and cutting average token consumption per run from 250K to 15K&ndash;20K
+                (92%+ reduction), with full execution tracing via LangSmith.</li>
+              <li>Architected and built a full-stack PMO engine (Next.js, NestJS) for dynamic project, task and resource
+                management &mdash; fully configurable with no hardcoded logic, supporting multi-tenant architecture and
+                role-based access control (RBAC).</li>
+              <li>Integrated the GitHub API and Hatchet workflow orchestration to automate cross-project task syncing and
+                background job execution.</li>
+            </ul>
+          </div>
+
+          <!-- Angularspring / Powersoft19 -->
+          <div class="exp-card reveal">
+            <div class="exp-header">
+              <div class="exp-meta">
+                <h3 class="exp-role">Full-Stack Software Developer</h3>
+                <span class="exp-company">@ Angularspring, Powersoft19 <span class="exp-location">Lahore,
+                    Pakistan</span></span>
+              </div>
+              <span class="exp-date mono">Jan 2025 &mdash; Apr 2026</span>
             </div>
-            <div class="skill-item">
-              <i class="devicon-typescript-plain"></i>
-              <span>TypeScript</span>
+            <ul class="exp-details">
+              <li>Engineered a 3-Tier AI Waterfall (Gemini 2.5 Flash, Groq, local Qwen2.5) for a Flask microservice
+                processing 4M+ products, reducing API latency by 90%+ while guaranteeing 100% offline failover uptime.
+              </li>
+              <li>Built an LLM data extraction engine with strict Pydantic schema enforcement, auto-healing retries,
+                categorical unpacking and anti-hallucination gates, eliminating data fabrication.</li>
+              <li>Developed a high-speed classification engine using C++ RapidFuzz for MS SQL matching, ensuring
+                thread-safe WSGI concurrency via OS-level semaphores and sub-millisecond retrieval through SHA-256
+                semantic MongoDB caching.</li>
+              <li>Built RAG chatbots (LangChain, Ollama/Llama 3.2, ChromaDB) for context-aware technical assistance, and
+                a cross-platform sync engine (n8n, Evolution API) integrating WhatsApp and Smartsheet into executive
+                dashboards.</li>
+              <li>Engineered ETL pipelines for automated extraction, deterministic LLM transformation and loading into
+                SQL Server, with in-memory caching reducing API latency from 2s to 200ms.</li>
+              <li>Designed Angular applications for time-series visualisation using ECharts WebGL, handling 1M+ data
+                points with real-time interaction, custom timestamp parsing and CSV export.</li>
+              <li>Built desktop applications with Electron.js and .NET (C# WinForms) for internal data management and
+                image processing, using secure IPC communication.</li>
+            </ul>
+          </div>
+
+          <!-- CyberSoft Vantage -->
+          <div class="exp-card reveal">
+            <div class="exp-header">
+              <div class="exp-meta">
+                <h3 class="exp-role">Web Development Intern</h3>
+                <span class="exp-company">@ CyberSoft Vantage <span class="exp-location">Islamabad,
+                    Pakistan</span></span>
+              </div>
+              <span class="exp-date mono">Jul 2023 &mdash; Oct 2024</span>
             </div>
-            <div class="skill-item">
-              <i class="fa-solid fa-database"></i>
-              <span>SQL</span>
+            <ul class="exp-details">
+              <li>Developed production MERN application features, implementing React components with hooks and state
+                management, and collaborating on Express.js REST APIs with MongoDB integration.</li>
+              <li>Participated in Git-based workflows &mdash; code reviews, pull requests and CI/CD pipelines &mdash;
+                upholding code quality and deployment standards.</li>
+            </ul>
+          </div>
+
+          <!-- Teaching Assistant -->
+          <div class="exp-card reveal">
+            <div class="exp-header">
+              <div class="exp-meta">
+                <h3 class="exp-role">Teaching Assistant</h3>
+                <a href="https://isb.nu.edu.pk/" target="_blank" rel="noopener noreferrer" class="exp-company">@
+                  FAST-NUCES <span class="exp-location">Islamabad, Pakistan</span></a>
+              </div>
+              <span class="exp-date mono">Spring 2023 &mdash; Fall 2023</span>
             </div>
-            <div class="skill-item">
-              <i class="fab fa-html5"></i>
-              <span>HTML/CSS</span>
+            <ul class="exp-details">
+              <li>Conducted lab sessions for CS 118, CS 1004 and CS 2001, mentoring 100+ students in C/C++ programming,
+                data structures and debugging techniques.</li>
+            </ul>
+          </div>
+
+          <!-- TEDx -->
+          <div class="exp-card reveal">
+            <div class="exp-header">
+              <div class="exp-meta">
+                <h3 class="exp-role">Event Manager</h3>
+                <span class="exp-company">@ TEDxFASTIslamabad <span class="exp-location">Islamabad,
+                    Pakistan</span></span>
+              </div>
+              <span class="exp-date mono">Sept 2022 &mdash; Dec 2022</span>
             </div>
-            <div class="skill-item">
-              <i class="fas fa-search"></i>
-              <span>RAG</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-microchip"></i>
-              <span>Ollama</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-robot"></i>
-              <span>LangChain</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-workflow"></i>
-              <span>n8n</span>
-            </div>
-            <div class="skill-item">
-              <i class="devicon-flask-original"></i>
-              <span>Flask</span>
-            </div>
-            <div class="skill-item">
-              <i class="devicon-fastapi-plain"></i>
-              <span>FastAPI</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-react"></i>
-              <span>React</span>
-            </div>
-            <div class="skill-item">
-              <i class="devicon-angularjs-plain"></i>
-              <span>Angular</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-aws"></i>
-              <span>AWS</span>
-            </div>
-            <div class="skill-item">
-              <i class="devicon-mongodb-plain"></i>
-              <span>MongoDB</span>
-            </div>
-            <div class="skill-item">
-              <i class="fa-solid fa-database"></i>
-              <span>MS SQL Server</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-node-js"></i>
-              <span>Node.js</span>
-            </div>
-            <div class="skill-item">
-              <i class="devicon-dotnetcore-plain"></i>
-              <span>.NET</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-chart-area"></i>
-              <span>Streamlit</span>
-            </div>
-            
-            <div class="skill-item">
-              <i class="fas fa-link"></i>
-              <span>Web3.js</span>
-            </div>
-            <div class="skill-item">
-              <i class="devicon-postgresql-plain"></i>
-              <span>PostgreSQL</span>
-            </div>
-            <div class="skill-item">
-              <i class="devicon-redis-plain"></i>
-              <span>Redis</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-brain"></i>
-              <span>ChromaDB</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-github"></i>
-              <span>Git/GitHub</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-docker"></i>
-              <span>Docker</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-plug"></i>
-              <span>REST APIs</span>
-            </div>
-            
-            <div class="skill-item">
-              <i class="fas fa-spider"></i>
-              <span>Selenium</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-chart-line"></i>
-              <span>ECharts</span>
-            </div>
+            <ul class="exp-details">
+              <li>Managed operations and logistics for FAST's first official TEDx event, coordinating speakers, venue
+                setup and audience engagement initiatives.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section">
+    <!-- ==================== Projects ==================== -->
+    <section id="projects" class="section">
       <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">Experience</h2>
-          <p class="section-subtitle">Recent roles and impact.</p>
+        <div class="section-header reveal">
+          <span class="section-label mono">03. Projects</span>
+          <h2 class="section-title">What I've Built</h2>
         </div>
 
-        <div class="timeline">
-          <div class="experience-item">
-            <div class="experience-date">
-              <span>Jan 2025 – Present</span>
-            </div>
-            <div class="experience-content">
-              <h3 class="experience-title">Full-Stack Software Developer</h3>
-              <div class="experience-company">
-                <i class="fas fa-building"></i> Powersoft19, AngularSpring • Lahore, Pakistan
-              </div>
-              <ul class="experience-description">
-                <li>Architected a highly concurrent Flask microservice processing 4M+ products, featuring a dual-pipeline LLM extraction engine (Qwen2.5) with strict Pydantic schema enforcement, aggressive regex noise cancellation, and algorithmic anti-hallucination gates.</li>
-                <li>Engineered a high-speed classification waterfall utilizing C++ RapidFuzz for MS SQL matching, ensuring WSGI multi-worker thread safety via OS-level semaphores and sub-millisecond latency via SHA-256 semantic MongoDB caching.</li>
-                <li>Engineered RAG-based chatbots using LangChain and Ollama (Llama 3.2) with ChromaDB vector databases for context-aware technical assistance and conversation memory management.</li>
-                <li>Architected a high-concurrency cross-platform synchronization engine using n8n and Evolution API, featuring a "Transparent Proxy" relay and custom "Loop Killer" logic to handle complex binary media pipelines with sub-100ms response latency.</li>
-                <li>Developed an end-to-end bidirectional task management ecosystem integrating WhatsApp and Smartsheet, utilizing custom JavaScript parsing to synchronize real-time employee performance metrics into executive dashboards.</li>
-                <li>Engineered ETL pipelines for automated data extraction (web scraping), transformation (Deterministic LLM extraction engine), and loading into SQL Server, with in-memory caching reducing API latency from 2s to 200ms.</li>
-                <li>Developed an automated web scraping system using Selenium and BeautifulSoup for extracting ingredient data with pagination handling, retry logic, and structured CSV export for database import.</li>
-                <li>Designed Angular applications for time-series visualization using ECharts WebGL, handling 1M+ data points with real-time interaction, custom timestamp parsing, and CSV export functionality.</li>
-                <li>Built desktop applications using Electron.js and .NET (C# WinForms) for internal data management, image processing tools, and cross-platform utilities with secure IPC communication.</li>
-                <li>Collaborated with a 3-person development team using Git workflows, conducting code reviews, and participating in daily standups for feature development.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="experience-item">
-            <div class="experience-date">
-              <span>Jul 2023 – Oct 2024</span>
-            </div>
-            <div class="experience-content">
-              <h3 class="experience-title">Web Development Intern</h3>
-              <div class="experience-company">
-                <i class="fas fa-building"></i> CyberSoft Vantage • Islamabad, Pakistan
-              </div>
-              <ul class="experience-description">
-                <li>Developed production MERN application features, including implementing React components with hooks and state management and collaborating on Express.js REST APIs with MongoDB integration.</li>
-                <li>Participated in Git-based workflows, including code reviews, pull requests, and CI/CD pipelines, ensuring code quality and deployment standards.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="experience-item">
-            <div class="experience-date">
-              <span>Spring 2023 – Fall 2023</span>
-            </div>
-            <div class="experience-content">
-              <h3 class="experience-title">Teaching Assistant</h3>
-              <div class="experience-company">
-                <i class="fas fa-building"></i> National University of Computer and Emerging Sciences (FAST) • Islamabad, Pakistan
-              </div>
-              <ul class="experience-description">
-                <li>Conducted lab sessions for CS 118, CS 1004, and CS 2001, mentoring 100+ students in C/C++ programming, data structures, and debugging techniques.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="experience-item">
-            <div class="experience-date">
-              <span>Sept 2022 – Dec 2022</span>
-            </div>
-            <div class="experience-content">
-              <h3 class="experience-title">Event Manager</h3>
-              <div class="experience-company">
-                <i class="fas fa-building"></i> TEDxFASTIslamabad • Islamabad, Pakistan
-              </div>
-              <ul class="experience-description">
-                <li>Managed operations and logistics for FAST's first official TEDx event, coordinating speakers, venue setup, and audience engagement initiatives.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">Projects</h2>
-          <p class="section-subtitle">
-            What I've been working on lately.
-          </p>
-        </div>
-
-        <div class="filters" role="tablist" aria-label="Project filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="ai">AI / RAG</button>
-          <button class="filter-btn" data-filter="automation">Automation</button>
-          <button class="filter-btn" data-filter="backend">APIs</button>
-          <button class="filter-btn" data-filter="frontend">Data Viz</button>
+        <div class="project-filters reveal" role="group" aria-label="Filter projects by category">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-filter="ai" aria-pressed="false">AI / RAG</button>
+          <button type="button" class="filter-btn" data-filter="automation" aria-pressed="false">Automation</button>
+          <button type="button" class="filter-btn" data-filter="backend" aria-pressed="false">APIs</button>
+          <button type="button" class="filter-btn" data-filter="frontend" aria-pressed="false">Data Viz</button>
         </div>
 
         <div class="projects-grid" id="projects-grid">
-          <!-- Project cards -->
-          <article class="project card" data-tags="ai backend">
-            <div class="project-head">
-              <h3>EngineerBot: AI Technical Assistant</h3>
-              <span class="badge">RAG</span>
-            </div>
-            <p>
-              RAG chatbot using LangChain + Ollama with ChromaDB for fast, relevant retrieval over engineering notes.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">ChromaDB</span><span class="tag">Streamlit</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/H-rasool/EngineerBot" class="link">GitHub</a>
-              <!-- <a href="#" class="link">Demo</a> -->
+
+          <article class="project-card reveal" data-tags="ai frontend backend">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links"></div>
+              </div>
+              <h3 class="project-title">TrustIsMust</h3>
+              <p class="project-subtitle">Fake Review Detection Platform</p>
+              <p class="project-description">
+                Full-stack fake review detection system using Naive Bayes classification and PyABSA
+                aspect-based sentiment analysis, deployed on AWS (EC2, S3, RDS).
+              </p>
+              <div class="project-tech">
+                <span>MERN</span><span>Python</span><span>Machine Learning</span><span>PyABSA</span><span>AWS</span>
+              </div>
             </div>
           </article>
 
-          <article class="project card" data-tags="ai backend">
-            <div class="project-head">
-              <h3>PizzaBot: Review QA Assistant</h3>
-              <span class="badge">RAG/Local LLM</span>
-            </div>
-            <p>
-              Streamlit app that answers questions about restaurant reviews using RAG + local LLM generation.
-            </p>
-            <div class="tags">
-              <span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">ChromaDB</span><span class="tag">Streamlit</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/H-rasool/resturant-bot" class="link">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project card" data-tags="automation backend">
-            <div class="project-head">
-              <h3>WhatsApp Automation Stack</h3>
-              <span class="badge">Docker</span>
-            </div>
-            <p>
-              Dockerized stack with Evolution API, PostgreSQL, Redis, and n8n for WhatsApp workflow automation.
-            </p>
-            <div class="tags">
-              <span class="tag">Docker</span><span class="tag">n8n</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Evolution API</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/H-rasool/EvolutionAPI-n8n" class="link">GitHub</a>
+          <article class="project-card reveal" data-tags="frontend">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links">
+                  <a href="https://github.com/H-rasool/time-series-visiualization-tool" target="_blank"
+                    rel="noopener noreferrer" aria-label="TrustIsMust time series tool on GitHub"><i class="fab fa-github"
+                      aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title">CSV Time Series Visualization Tool</h3>
+              <p class="project-subtitle">High-Performance Charting for Large Datasets</p>
+              <p class="project-description">
+                High-performance Angular app visualising 1M+ data points with custom timestamp parsing
+                and streaming CSV parsing (PapaParse) for 500MB+ datasets.
+              </p>
+              <div class="project-tech">
+                <span>Angular</span><span>TypeScript</span><span>ECharts WebGL</span><span>PapaParse</span>
+              </div>
             </div>
           </article>
 
-          <article class="project card" data-tags="frontend">
-            <div class="project-head">
-              <h3>CSV Time Series Visualization</h3>
-              <span class="badge">WebGL</span>
-            </div>
-            <p>
-              High-performance Angular charting app for large CSV time-series datasets with multi-channel views and export.
-            </p>
-            <div class="tags">
-              <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">ECharts</span><span class="tag">WebGL</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/H-rasool/time-series-visiualization-tool" class="link">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project card" data-tags="backend">
-            <div class="project-head">
-              <h3>Ingredient Parser API</h3>
-              <span class="badge">FastAPI</span>
-            </div>
-            <p>
-              API that fetches product ingredients from MongoDB and parses them into structured outputs.
-            </p>
-            <div class="tags">
-              <span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">NLP</span><span class="tag">Pydantic</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/H-rasool/Ingredient-Parser" class="link">GitHub</a>
+          <article class="project-card reveal" data-tags="ai backend">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links">
+                  <a href="https://github.com/H-rasool/EngineerBot" target="_blank" rel="noopener noreferrer"
+                    aria-label="EngineerBot on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title">EngineerBot</h3>
+              <p class="project-subtitle">AI Technical Assistant</p>
+              <p class="project-description">
+                RAG chatbot built with LangChain and Ollama, backed by a ChromaDB vector store for fast,
+                relevant retrieval over engineering notes.
+              </p>
+              <div class="project-tech">
+                <span>Python</span><span>LangChain</span><span>Ollama</span><span>ChromaDB</span><span>Streamlit</span>
+              </div>
             </div>
           </article>
 
-          <article class="project card" data-tags="backend">
-            <div class="project-head">
-              <h3>OFF Slicer API</h3>
-              <span class="badge">Rule-based</span>
-            </div>
-            <p>
-              Lightweight FastAPI service using ingredient-slicer for fast parsing with optional MongoDB integration.
-            </p>
-            <div class="tags">
-              <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">MongoDB</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/H-rasool/Ingredient-Off-slicer" class="link">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project card" data-tags="automation ai">
-            <div class="project-head">
-              <h3>ArgosTranslateTest</h3>
-              <span class="badge">Offline</span>
-            </div>
-            <p>
-              Offline ingredient translation tool with heuristics for language detection and domain-specific cleanup.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">Argos Translate</span><span class="tag">NLP</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/H-rasool/Argos-Translate-en" class="link">GitHub</a>
+          <article class="project-card reveal" data-tags="ai backend">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links">
+                  <a href="https://github.com/H-rasool/resturant-bot" target="_blank" rel="noopener noreferrer"
+                    aria-label="PizzaBot on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title">PizzaBot</h3>
+              <p class="project-subtitle">Review QA Assistant on a Local LLM</p>
+              <p class="project-description">
+                Streamlit app that answers questions about restaurant reviews using retrieval-augmented
+                generation over a local LLM.
+              </p>
+              <div class="project-tech">
+                <span>LangChain</span><span>Ollama</span><span>ChromaDB</span><span>Streamlit</span>
+              </div>
             </div>
           </article>
 
-          <article class="project card" data-tags="backend automation">
-            <div class="project-head">
-              <h3>ChatGPT Export Migration Tool</h3>
-              <span class="badge">Utility</span>
-            </div>
-            <p>
-              Script to split ChatGPT export files into per-conversation JSON/Markdown with safe filenames and filters.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">CLI</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/H-rasool/GPT-chat-splitter" class="link">GitHub</a>
+          <article class="project-card reveal" data-tags="automation backend">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links">
+                  <a href="https://github.com/H-rasool/EvolutionAPI-n8n" target="_blank" rel="noopener noreferrer"
+                    aria-label="WhatsApp Automation Stack on GitHub"><i class="fab fa-github"
+                      aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title">WhatsApp Automation Stack</h3>
+              <p class="project-subtitle">Dockerised Workflow Automation Environment</p>
+              <p class="project-description">
+                Self-hosted stack combining Evolution API, PostgreSQL, Redis and n8n to drive WhatsApp
+                workflow automation from a single Docker composition.
+              </p>
+              <div class="project-tech">
+                <span>Docker</span><span>n8n</span><span>PostgreSQL</span><span>Redis</span><span>Evolution API</span>
+              </div>
             </div>
           </article>
 
-          <article class="project card" data-tags="ai frontend backend">
-            <div class="project-head">
-              <h3>TrustIsMust (FYP)</h3>
-              <span class="badge">ML</span>
-            </div>
-            <p>
-              MERN system with ML integration to detect fake reviews and compute trust scores.
-            </p>
-            <div class="tags">
-              <span class="tag">React</span><span class="tag">Node</span><span class="tag">Python</span><span class="tag">AWS</span>
-            </div>
-            <div class="project-links">
-              <!-- <a href="#" class="link">GitHub</a> -->
+          <article class="project-card reveal" data-tags="backend">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links">
+                  <a href="https://github.com/H-rasool/Ingredient-Parser" target="_blank" rel="noopener noreferrer"
+                    aria-label="Ingredient Parser API on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title">Ingredient Parser API</h3>
+              <p class="project-subtitle">Structured Extraction Service</p>
+              <p class="project-description">
+                API that fetches product ingredients from MongoDB and parses free-text listings into
+                structured, schema-validated output.
+              </p>
+              <div class="project-tech">
+                <span>FastAPI</span><span>MongoDB</span><span>NLP</span><span>Pydantic</span>
+              </div>
             </div>
           </article>
+
+          <article class="project-card reveal" data-tags="backend">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links">
+                  <a href="https://github.com/H-rasool/Ingredient-Off-slicer" target="_blank" rel="noopener noreferrer"
+                    aria-label="OFF Slicer API on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title">OFF Slicer API</h3>
+              <p class="project-subtitle">Rule-Based Parsing Microservice</p>
+              <p class="project-description">
+                Lightweight FastAPI service wrapping ingredient-slicer for fast deterministic parsing,
+                with optional MongoDB integration and a container-first deployment.
+              </p>
+              <div class="project-tech">
+                <span>FastAPI</span><span>Docker</span><span>MongoDB</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-tags="ai automation">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links">
+                  <a href="https://github.com/H-rasool/Argos-Translate-en" target="_blank" rel="noopener noreferrer"
+                    aria-label="ArgosTranslateTest on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title">ArgosTranslateTest</h3>
+              <p class="project-subtitle">Offline Translation Pipeline</p>
+              <p class="project-description">
+                Fully offline ingredient translation tool with heuristics for language detection and
+                domain-specific cleanup — no third-party API calls.
+              </p>
+              <div class="project-tech">
+                <span>Python</span><span>Argos Translate</span><span>NLP</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-tags="backend automation">
+            <div class="project-card-inner">
+              <div class="project-top">
+                <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
+                <div class="project-links">
+                  <a href="https://github.com/H-rasool/GPT-chat-splitter" target="_blank" rel="noopener noreferrer"
+                    aria-label="ChatGPT Export Migration Tool on GitHub"><i class="fab fa-github"
+                      aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title">ChatGPT Export Migration Tool</h3>
+              <p class="project-subtitle">Bulk Conversation Splitter</p>
+              <p class="project-description">
+                CLI utility that splits ChatGPT export archives into per-conversation JSON and Markdown
+                files, with safe filename generation and content filters.
+              </p>
+              <div class="project-tech">
+                <span>Python</span><span>CLI</span><span>JSON</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="projects-empty" id="projects-empty" hidden>No projects match this filter.</p>
+      </div>
+    </section>
+
+    <!-- ==================== Skills ==================== -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label mono">04. Skills</span>
+          <h2 class="section-title">Technologies I Work With</h2>
+        </div>
+
+        <div class="skills-content reveal">
+          <div class="skill-category">
+            <h3 class="skill-category-title">Languages <span class="skill-count" data-skill-count></span></h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-python-plain" aria-hidden="true"></i> Python</span>
+              <span class="skill-tag"><i class="devicon-javascript-plain" aria-hidden="true"></i> JavaScript</span>
+              <span class="skill-tag"><i class="devicon-typescript-plain" aria-hidden="true"></i> TypeScript</span>
+              <span class="skill-tag"><i class="fas fa-database" aria-hidden="true"></i> SQL</span>
+              <span class="skill-tag"><i class="devicon-html5-plain" aria-hidden="true"></i> HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">AI/ML &amp; Agentic Systems <span class="skill-count"
+                data-skill-count></span></h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fas fa-diagram-project" aria-hidden="true"></i> LangGraph</span>
+              <span class="skill-tag"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i> LangSmith</span>
+              <span class="skill-tag"><i class="fas fa-link" aria-hidden="true"></i> LangChain</span>
+              <span class="skill-tag"><i class="fas fa-book-open-reader" aria-hidden="true"></i> RAG</span>
+              <span class="skill-tag"><i class="fas fa-microchip" aria-hidden="true"></i> Ollama</span>
+              <span class="skill-tag"><i class="fas fa-brain" aria-hidden="true"></i> ChromaDB</span>
+              <span class="skill-tag"><i class="fas fa-vector-square" aria-hidden="true"></i> VectorDB</span>
+              <span class="skill-tag"><i class="fas fa-robot" aria-hidden="true"></i> OpenAI</span>
+              <span class="skill-tag"><i class="fas fa-gem" aria-hidden="true"></i> Gemini</span>
+              <span class="skill-tag"><i class="fas fa-bolt" aria-hidden="true"></i> Groq</span>
+              <span class="skill-tag"><i class="fas fa-magnifying-glass" aria-hidden="true"></i> Serper</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">Frameworks <span class="skill-count" data-skill-count></span></h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-nextjs-plain" aria-hidden="true"></i> Next.js</span>
+              <span class="skill-tag"><i class="devicon-nestjs-original" aria-hidden="true"></i> NestJS</span>
+              <span class="skill-tag"><i class="devicon-react-original" aria-hidden="true"></i> React.js</span>
+              <span class="skill-tag"><i class="devicon-angularjs-plain" aria-hidden="true"></i> Angular</span>
+              <span class="skill-tag"><i class="devicon-nodejs-plain" aria-hidden="true"></i> Node.js</span>
+              <span class="skill-tag"><i class="devicon-flask-original" aria-hidden="true"></i> Flask</span>
+              <span class="skill-tag"><i class="devicon-dotnetcore-plain" aria-hidden="true"></i> .NET</span>
+              <span class="skill-tag"><i class="fas fa-share-nodes" aria-hidden="true"></i> n8n</span>
+              <span class="skill-tag"><i class="devicon-electron-original" aria-hidden="true"></i> Electron.js</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">Databases <span class="skill-count" data-skill-count></span></h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-mongodb-plain" aria-hidden="true"></i> MongoDB</span>
+              <span class="skill-tag"><i class="devicon-microsoftsqlserver-plain" aria-hidden="true"></i> MS SQL
+                Server</span>
+              <span class="skill-tag"><i class="devicon-postgresql-plain" aria-hidden="true"></i> PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">Tools &amp; Cloud <span class="skill-count" data-skill-count></span></h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-git-plain" aria-hidden="true"></i> Git/GitHub</span>
+              <span class="skill-tag"><i class="devicon-amazonwebservices-plain-wordmark" aria-hidden="true"></i>
+                AWS</span>
+              <span class="skill-tag"><i class="devicon-docker-plain" aria-hidden="true"></i> Docker</span>
+              <span class="skill-tag"><i class="fas fa-plug" aria-hidden="true"></i> REST APIs</span>
+              <span class="skill-tag"><i class="fab fa-github" aria-hidden="true"></i> GitHub API</span>
+              <span class="skill-tag"><i class="fas fa-layer-group" aria-hidden="true"></i> Hatchet</span>
+              <span class="skill-tag"><i class="fas fa-gears" aria-hidden="true"></i> Workflow Automation</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Certifications -->
+    <!-- ==================== Certifications ==================== -->
     <section id="certifications" class="section">
       <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">Certifications</h2>
-          <p class="section-subtitle">A few credentials and learning milestones.</p>
+        <div class="section-header reveal">
+          <span class="section-label mono">05. Certifications</span>
+          <h2 class="section-title">Credentials</h2>
         </div>
 
-        <div class="cert-grid">
-          <div class="card cert">
-            <h3>AWS Academy Graduate</h3>
-            <p>AWS Academy Microservices and CI/CD Pipeline Builder</p>
+        <div class="certs-grid">
+          <div class="cert-card reveal">
+            <div class="cert-badge">
+              <span class="cert-icon" aria-hidden="true"><i class="fab fa-aws"></i></span>
+            </div>
+            <div class="cert-info">
+              <h3>AWS Academy Graduate</h3>
+              <p class="cert-desc">Microservices and CI/CD Pipeline Builder</p>
+              <p class="cert-meta mono">Amazon Web Services</p>
+              <a href="./Images/aws.png" target="_blank" rel="noopener noreferrer" class="cert-link">
+                View Certificate <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
-          <div class="card cert">
-            <h3>freeCodeCamp</h3>
-            <p>JavaScript Algorithms and Data Structures</p>
+
+          <div class="cert-card reveal">
+            <div class="cert-badge">
+              <span class="cert-icon" aria-hidden="true"><i class="fab fa-free-code-camp"></i></span>
+            </div>
+            <div class="cert-info">
+              <h3>JavaScript Algorithms &amp; Data Structures</h3>
+              <p class="cert-desc">Core algorithms and problem solving</p>
+              <p class="cert-meta mono">freeCodeCamp</p>
+            </div>
           </div>
-          <div class="card cert">
-            <h3>W3Schools</h3>
-            <p>HTML and CSS</p>
+
+          <div class="cert-card reveal">
+            <div class="cert-badge">
+              <span class="cert-icon" aria-hidden="true"><i class="fab fa-html5"></i></span>
+            </div>
+            <div class="cert-info">
+              <h3>HTML and CSS</h3>
+              <p class="cert-desc">Markup and styling fundamentals</p>
+              <p class="cert-meta mono">W3Schools</p>
+            </div>
           </div>
-          <div class="card cert">
-            <h3>DataCamp</h3>
-            <p>Introduction to Python</p>
+
+          <div class="cert-card reveal">
+            <div class="cert-badge">
+              <span class="cert-icon" aria-hidden="true"><i class="fab fa-python"></i></span>
+            </div>
+            <div class="cert-info">
+              <h3>Introduction to Python</h3>
+              <p class="cert-desc">Python programming fundamentals</p>
+              <p class="cert-meta mono">DataCamp</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ==================== Contact ==================== -->
     <section id="contact" class="section section-alt">
       <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">Contact</h2>
-          <p class="section-subtitle">Want to collaborate or hire? Send a message.</p>
+        <div class="section-header reveal">
+          <span class="section-label mono">06. Contact</span>
+          <h2 class="section-title">Get In Touch</h2>
         </div>
 
-        <div class="contact-grid">
-          <div class="card">
-            <h3>Reach me</h3>
-            <div class="contact-item">
-              <span class="contact-label">Email</span>
-              <a class="contact-value link" href="mailto:hasnatrasool620@gmail.com">hasnatrasool620@gmail.com</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Phone</span>
-              <a class="contact-value link" href="tel:+923037364710">+92 303 7364710</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">LinkedIn</span>
-              <a class="contact-value link" href="https://linkedin.com/in/hasnatrasool/" target="_blank" rel="noopener">linkedin.com/in/hasnatrasool</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">GitHub</span>
-              <a class="contact-value link" href="https://github.com/H-rasool" target="_blank" rel="noopener">github.com/H-rasool</a>
-            </div>
+        <div class="contact-content reveal">
+          <p class="contact-text">
+            I'm open to roles and collaborations in AI/ML engineering and full-stack product work.
+            Whether you have a question or just want to say hi — my inbox is always open.
+          </p>
 
-            <!-- <p class="muted" style="margin-top:14px">
-              Tip: if you don’t want to show your phone publicly, remove it from this section.
-            </p> -->
+          <div class="contact-methods">
+            <a href="mailto:hasnatrasool620@gmail.com" class="contact-method">
+              <i class="far fa-envelope" aria-hidden="true"></i>
+              <span>hasnatrasool620@gmail.com</span>
+            </a>
+            <a href="tel:+923037364710" class="contact-method">
+              <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              <span>+92 303 7364710</span>
+            </a>
+            <a href="https://linkedin.com/in/hasnatrasool" target="_blank" rel="noopener noreferrer"
+              class="contact-method">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>linkedin.com/in/hasnatrasool</span>
+            </a>
+            <a href="https://github.com/H-rasool" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <span>github.com/H-rasool</span>
+            </a>
           </div>
 
-          <form class="card contact-form" action="mailto:hasnatrasool620@gmail.com" method="post" enctype="text/plain">
-            <h3>Send a message</h3>
-
-            <label>
-              <span>Name</span>
-              <input name="name" placeholder="Your name" required />
-            </label>
-
-            <label>
-              <span>Email</span>
-              <input name="email" type="email" placeholder="you@example.com" required />
-            </label>
-
-            <label>
-              <span>Message</span>
-              <textarea name="message" rows="6" placeholder="How can I help?" required></textarea>
-            </label>
-
-            <button class="btn primary" type="submit">Send</button>
-            <!-- <p class="muted small">This uses your email client (mailto) since the site is static.</p> -->
-          </form>
+          <a href="mailto:hasnatrasool620@gmail.com" class="btn btn-primary btn-lg">Say Hello</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Designed & Built by Hasnat Rasool</p>
-      <a class="link" href="#top">Back to top</a>
+  <!-- ==================== Footer ==================== -->
+  <footer>
+    <div class="container footer-content">
+      <p class="footer-credit">
+        Designed &amp; Built by <strong>Hasnat Rasool</strong> &middot; <span data-current-year></span>
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/H-rasool" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+            class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/hasnatrasool" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
+            class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="mailto:hasnatrasool620@gmail.com" aria-label="Email"><i class="far fa-envelope"
+            aria-hidden="true"></i></a>
+        <a href="tel:+923037364710" aria-label="Phone"><i class="fas fa-phone-alt" aria-hidden="true"></i></a>
+      </div>
     </div>
   </footer>
 
-  <button class="to-top" id="to-top" aria-label="Scroll to top">↑</button>
+  <!-- Back to top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
+
 </html>
