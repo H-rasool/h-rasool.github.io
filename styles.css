@@ -776,6 +776,13 @@ a.exp-company:hover {
   content: "· ";
 }
 
+.exp-context {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
 .exp-date {
   color: var(--text-muted);
   font-size: 0.8rem;
@@ -1840,4 +1847,56 @@ footer {
 @media (max-width: 600px) {
   .about-stats { grid-template-columns: 1fr 1fr; }
   .exp-card .exp-badge { margin-left: 0; margin-top: 6px; }
+}
+
+/* ==================== Achievements ==================== */
+.achv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.achv-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.achv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.achv-metric {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--accent);
+}
+
+.achv-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.achv-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .achv-card:hover { transform: none; }
+}
+
+/* Seven nav links: tighten spacing before the hamburger takes over at 1024px */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .nav-link { padding: 8px 11px; }
 }
