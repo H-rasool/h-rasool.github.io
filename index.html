@@ -245,7 +245,7 @@
               <li>Rebuilt the React Native (Expo) customer app for iOS and Android with a shared design system and
                 per-tenant branding, reusing business logic from the Next.js web app to keep both platforms consistent;
                 managed iOS and Android release builds.</li>
-              <li>Migrated an agentic AI workflow (OpenAI GPT, Serper search integration) from n8n to LangGraph,
+              <li>Migrated an agentic AI workflow (OpenAI GPT, Serper search integration, Cartesia text-to-speech) from n8n to LangGraph,
                 redesigning orchestration logic and cutting average token consumption per run from 250K to 15K&ndash;20K
                 (92%+ reduction), with full execution tracing via LangSmith.</li>
               <li>Merged 100+ PRs as a full-stack engineer on <a href="https://t360.teamtechverx.com/" target="_blank" rel="noopener noreferrer">T360</a>, a multi-tenant PMO platform
@@ -460,13 +460,14 @@
                 </div>
               </div>
               <h3 class="project-title">EngineerBot</h3>
-              <p class="project-subtitle">AI Technical Assistant</p>
+              <p class="project-subtitle">Voice RAG Assistant</p>
               <p class="project-description">
                 RAG chatbot built with LangChain and Ollama, backed by a ChromaDB vector store for fast,
-                relevant retrieval over engineering notes.
+                relevant retrieval over engineering notes. Local voice mode: questions are transcribed with
+                faster-whisper speech-to-text and answers are read aloud with Piper text-to-speech.
               </p>
               <div class="project-tech">
-                <span>Python</span><span>LangChain</span><span>Ollama</span><span>ChromaDB</span><span>Streamlit</span>
+                <span>Python</span><span>LangChain</span><span>Ollama</span><span>ChromaDB</span><span>Whisper</span><span>Piper TTS</span><span>Streamlit</span>
               </div>
             </div>
           </article>
@@ -641,6 +642,8 @@
               <span class="skill-tag"><i class="fas fa-gem" aria-hidden="true"></i> Gemini</span>
               <span class="skill-tag"><i class="fas fa-bolt" aria-hidden="true"></i> Groq</span>
               <span class="skill-tag"><i class="fas fa-magnifying-glass" aria-hidden="true"></i> Serper</span>
+              <span class="skill-tag"><i class="fas fa-microphone" aria-hidden="true"></i> Speech-to-Text (Whisper)</span>
+              <span class="skill-tag"><i class="fas fa-volume-high" aria-hidden="true"></i> Text-to-Speech (Cartesia, Piper)</span>
               <span class="skill-tag"><i class="fas fa-user-gear" aria-hidden="true"></i> AI Agents</span>
               <span class="skill-tag"><i class="fas fa-terminal" aria-hidden="true"></i> Prompt Engineering</span>
               <span class="skill-tag"><i class="fas fa-code" aria-hidden="true"></i> Structured Outputs</span>
