@@ -248,9 +248,9 @@
               <li>Migrated an agentic AI workflow (OpenAI GPT, Serper search integration) from n8n to LangGraph,
                 redesigning orchestration logic and cutting average token consumption per run from 250K to 15K&ndash;20K
                 (92%+ reduction), with full execution tracing via LangSmith.</li>
-              <li>Architected and built a multi-tenant PMO engine (Next.js, NestJS) for project, task and resource
-                management with role-based access control (RBAC), integrating the GitHub API and Hatchet workflow
-                orchestration for cross-project task syncing and background jobs.</li>
+              <li>Merged 100+ PRs as a full-stack engineer on <a href="https://t360.teamtechverx.com/" target="_blank" rel="noopener noreferrer">T360</a>, a multi-tenant PMO platform
+                (Next.js, NestJS, MongoDB): wrote the client-approved RBAC action matrix (8 project roles &times; 30 modules
+                &times; 7 actions) with project-scoped permissions, plus resource capacity planning and project health scoring.</li>
             </ul>
           </div>
 
@@ -275,8 +275,8 @@
                 thread-safe WSGI concurrency via OS-level semaphores and sub-millisecond retrieval through SHA-256
                 hash-keyed MongoDB caching.</li>
               <li>Built RAG chatbots (LangChain, Ollama/Llama 3.2, ChromaDB) for context-aware technical assistance.</li>
-              <li>Built a cross-platform sync engine (n8n, Evolution API) integrating WhatsApp and Smartsheet data into
-                executive dashboards.</li>
+              <li>Automated PMO coordination with n8n: a two-way WhatsApp&ndash;Slack bridge (Evolution API), Gemini
+                end-of-day chat summaries and Smartsheet task reminders over WhatsApp.</li>
               <li>Engineered ETL pipelines for automated extraction, deterministic LLM transformation and loading into
                 SQL Server, with in-memory caching reducing API latency from 2s to 200ms.</li>
               <li>Designed Angular applications for time-series visualisation using ECharts WebGL, handling 1M+ data
@@ -497,19 +497,20 @@
               <div class="project-top">
                 <i class="fas fa-folder-open project-icon" aria-hidden="true"></i>
                 <div class="project-links">
-                  <a href="https://github.com/H-rasool/EvolutionAPI-n8n" target="_blank" rel="noopener noreferrer"
-                    aria-label="WhatsApp Automation Stack on GitHub"><i class="fab fa-github"
+                  <a href="https://github.com/H-rasool/ai-automations" target="_blank" rel="noopener noreferrer"
+                    aria-label="AI Automation Stack on GitHub"><i class="fab fa-github"
                       aria-hidden="true"></i></a>
                 </div>
               </div>
-              <h3 class="project-title">WhatsApp Automation Stack</h3>
-              <p class="project-subtitle">Dockerised Workflow Automation Environment</p>
+              <h3 class="project-title">AI Automation Stack</h3>
+              <p class="project-subtitle">PMO &amp; Team Operations Automation</p>
               <p class="project-description">
-                Self-hosted stack combining Evolution API, PostgreSQL, Redis and n8n to drive WhatsApp
-                workflow automation from a single Docker composition.
+                Self-hosted n8n stack (10 workflows, 97 nodes): two-way WhatsApp&ndash;Slack bridge, Gemini
+                end-of-day chat summaries, and Smartsheet task tracking with WhatsApp digests of overdue
+                tasks and progress replies written back to Smartsheet.
               </p>
               <div class="project-tech">
-                <span>Docker</span><span>n8n</span><span>PostgreSQL</span><span>Redis</span><span>Evolution API</span>
+                <span>n8n</span><span>Gemini</span><span>Evolution API</span><span>Flask</span><span>PostgreSQL</span><span>Docker</span>
               </div>
             </div>
           </article>
